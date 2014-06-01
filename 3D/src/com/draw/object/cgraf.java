@@ -17,6 +17,7 @@ public class cgraf extends JComponent {
 		final cgraf t = new cgraf();
 		t.settx(400);
 		t.settY(400);
+		//
 		t.setXmin(-500);
 		t.setYmin(-500);
 		t.setXmax(500);
