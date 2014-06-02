@@ -6,15 +6,15 @@ import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-public class Draw3DProjecoes extends JComponent {
-	private static final int MAX = 24;
-	private static final int MAXC = 36;
+public class Draw3DProjecoesOther extends JComponent {
+	private static final int MAX = 28;
+	private static final int MAXC = 42;
 	private static final long serialVersionUID = 1L;
 	private double[][] m = new double[3][MAXC];
 	private int Xmin, Xmax, Ymin, Ymax, tx, ty;
 
 	public static void main(String[] args) {
-		final Draw3DProjecoes t = new Draw3DProjecoes();
+		final Draw3DProjecoesOther t = new Draw3DProjecoesOther();
 		t.settx(400);
 		t.settY(400);
 		//
@@ -25,9 +25,8 @@ public class Draw3DProjecoes extends JComponent {
 		t.definePontos();
 
 		t.escala(t.getM(), 5, 5, 5);
-		t.projecaoXY(t.getM(), 0.707, 0.707);
-		t.translacao(t.getM(), 50, 0, 0);
-
+		t.projecaoXY(t.getM(), 0.353, 0.353);
+		
 		JFrame obj = new JFrame();
 		obj.getContentPane().add(t);
 		obj.setSize(400, 400);
@@ -65,64 +64,74 @@ public class Draw3DProjecoes extends JComponent {
 	public void definePontos() {
 		//A
 		m[0][0] = 10;
-		m[1][0] = 10;
+		m[1][0] = 05;
 		m[2][0] = 10;
 		
 		//B
-		m[0][1] = 50;
-		m[1][1] = 10;
+		m[0][1] = 20;
+		m[1][1] = 05;
 		m[2][1] = 10;
 		
 		//B
-		m[0][2] = 50;
-		m[1][2] = 10;
+		m[0][2] = 20;
+		m[1][2] = 05;
 		m[2][2] = 10;
 		
 		//C
-		m[0][3] = 50;
-		m[1][3] = 40;
+		m[0][3] = 20;
+		m[1][3] = 30;
 		m[2][3] = 10;
 		
 		//C
-		m[0][4] = 50;
-		m[1][4] = 40;
+		m[0][4] = 20;
+		m[1][4] = 30;
 		m[2][4] = 10;
 		
 		//D
-		m[0][5] = 40;
-		m[1][5] = 40;
+		m[0][5] = 25;
+		m[1][5] = 30;
 		m[2][5] = 10;
 		
 		//D
-		m[0][6] = 40;
-		m[1][6] = 40;
+		m[0][6] = 25;
+		m[1][6] = 30;
 		m[2][6] = 10;
 		
 		//E
-		m[0][7] = 40;
-		m[1][7] = 20;
+		m[0][7] = 15;
+		m[1][7] = 40;
 		m[2][7] = 10;
 		
 
 		//E
-		m[0][8] = 40;
-		m[1][8] = 20;
+		m[0][8] = 15;
+		m[1][8] = 40;
 		m[2][8] = 10;
 		
 		//F
-		m[0][9] = 10;
-		m[1][9] = 20;
+		m[0][9] = 05;
+		m[1][9] = 30;
 		m[2][9] = 10;
 		
 		//F
-		m[0][10] = 10;
-		m[1][10] = 20;
+		m[0][10] = 05;
+		m[1][10] = 30;
 		m[2][10] = 10;
 		
-		//A
+		//G
 		m[0][11] = 10;
-		m[1][11] = 10;
+		m[1][11] = 30;
 		m[2][11] = 10;
+		
+		//G
+		m[0][12] = 10;
+		m[1][12] = 30;
+		m[2][12] = 10;
+		
+		//A
+		m[0][13] = 10;
+		m[1][13] = 05;
+		m[2][13] = 10;
 
 		//Copia os valores do plano 1 para o plano 2 alterando o valor de Z para 30 (profundidade)
 		for (int i = 0; i < MAX / 2; i++) {
@@ -133,65 +142,75 @@ public class Draw3DProjecoes extends JComponent {
 
 		// Conexões
 		//A
-		m[0][24] = 10;
-		m[1][24] = 10;
-		m[2][24] = 10;
-		
-		//G
-		m[0][25] = 10;
-		m[1][25] = 10;
-		m[2][25] = 30;
-		
-		//B
-		m[0][26] = 50;
-		m[1][26] = 10;
-		m[2][26] = 10;
-		
-		//H
-		m[0][27] = 50;
-		m[1][27] = 10;
-		m[2][27] = 30;
-		
-		//C
-		m[0][28] = 50;
-		m[1][28] = 40;
+		m[0][28] = 10;
+		m[1][28] = 05;
 		m[2][28] = 10;
 		
-		//I
-		m[0][29] = 50;
-		m[1][29] = 40;
+		//H
+		m[0][29] = 10;
+		m[1][29] = 05;
 		m[2][29] = 30;
 		
-		//D
-		m[0][30] = 40;
-		m[1][30] = 40;
+		//B
+		m[0][30] = 20;
+		m[1][30] = 05;
 		m[2][30] = 10;
 		
-		//J
-		m[0][31] = 40;
-		m[1][31] = 40;
+		//I
+		m[0][31] = 20;
+		m[1][31] = 05;
 		m[2][31] = 30;
 		
-		//E
-		m[0][32] = 40;
-		m[1][32] = 20;
+		//C
+		m[0][32] = 20;
+		m[1][32] = 30;
 		m[2][32] = 10;
 		
-		//K
-		m[0][33] = 40;
-		m[1][33] = 20;
+		//J
+		m[0][33] = 20;
+		m[1][33] = 30;
 		m[2][33] = 30;
 		
-		//F
-		m[0][34] = 10;
-		m[1][34] = 20;
+		//D
+		m[0][34] = 25;
+		m[1][34] = 30;
 		m[2][34] = 10;
 		
-		//L
-		m[0][35] = 10;
-		m[1][35] = 20;
+		//K
+		m[0][35] = 25;
+		m[1][35] = 30;
 		m[2][35] = 30;
+		
+		//E
+		m[0][36] = 15;
+		m[1][36] = 40;
+		m[2][36] = 10;
+		
+		//L
+		m[0][37] = 15;
+		m[1][37] = 40;
+		m[2][37] = 30;
+		
+		//F
+		m[0][38] = 05;
+		m[1][38] = 30;
+		m[2][38] = 10;
+		
+		//M
+		m[0][39] = 05;
+		m[1][39] = 30;
+		m[2][39] = 30;
+		
+		//G
+		m[0][40] = 10;
+		m[1][40] = 30;
+		m[2][40] = 10;		
 
+		//N
+		m[0][41] = 10;
+		m[1][41] = 30;
+		m[2][41] = 30;		
+		
 	}
 
 	public void projecaoXY(double m[][], double taxaX, double taxaY) {
