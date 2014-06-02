@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-public class cgraf extends JComponent {
+public class Draw3DProjecoes extends JComponent {
 	private static final int MAX = 24;
 	private static final int MAXC = 36;
 	private static final long serialVersionUID = 1L;
@@ -14,7 +14,7 @@ public class cgraf extends JComponent {
 	private int Xmin, Xmax, Ymin, Ymax, tx, ty;
 
 	public static void main(String[] args) {
-		final cgraf t = new cgraf();
+		final Draw3DProjecoes t = new Draw3DProjecoes();
 		t.settx(400);
 		t.settY(400);
 		//
