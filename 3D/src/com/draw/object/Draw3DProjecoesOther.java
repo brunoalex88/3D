@@ -15,24 +15,26 @@ public class Draw3DProjecoesOther extends JComponent {
 
 	public static void main(String[] args) {
 		final Draw3DProjecoesOther t = new Draw3DProjecoesOther();
-		t.settx(400);
-		t.settY(400);
+		t.settx(1000);
+		t.settY(600);
 		//
-		t.setXmin(-500);
-		t.setYmin(-500);
-		t.setXmax(500);
-		t.setYmax(500);
+		t.setXmin(-1000);
+		t.setYmin(-600);
+		t.setXmax(1000);
+		t.setYmax(600);
 		t.definePontos();
 
-		t.escala(t.getM(), 5, 5, 5);
+		t.escala(t.getM(), 4, 4, 4);
 		t.projecaoXY(t.getM(), 0.353, 0.353);
 		
-		JFrame obj = new JFrame();
-		obj.getContentPane().add(t);
-		obj.setSize(400, 400);
-		obj.setVisible(true);
-		obj.setLayout(null);
-		obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JFrame frame = new JFrame();
+		frame.getContentPane().add(t);
+		frame.setSize(1000, 600);
+		frame.setVisible(true);
+		frame.setLayout(null);
+		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
 
@@ -42,6 +44,7 @@ public class Draw3DProjecoesOther extends JComponent {
 		// Desenha os eixos
 		g.drawLine(mapeiaX(Xmin), mapeiaY(0), mapeiaX(Xmax), mapeiaY(0));
 		g.drawLine(mapeiaX(0), mapeiaY(Ymin), mapeiaX(0), mapeiaY(Ymax));
+		g.drawLine(mapeiaX(Xmax/2), mapeiaY(Ymin), mapeiaX(Xmax/2), mapeiaY(Ymax));
 
 		// Plano 1
 		for (int i = 0; i < MAX / 2 - 1; i++)

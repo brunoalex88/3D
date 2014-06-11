@@ -24,8 +24,8 @@ public class Draw3DProjecoes extends JComponent {
 		t.setYmax(500);
 		t.definePontos();
 
-		t.escala(t.getM(), 5, 5, 5);
-		t.projecaoXY(t.getM(), 0.707, 0.707);
+		t.escala(t.getM(), 4, 4, 4);
+		t.projecaoXY(t.getM(), 0.353, 0.353);
 		t.translacao(t.getM(), 50, 0, 0);
 
 		JFrame obj = new JFrame();
